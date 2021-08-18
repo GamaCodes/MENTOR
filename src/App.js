@@ -1,14 +1,32 @@
 import "./App.css";
+import Home from "./pages/Home";
+import { createTheme } from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/core/styles";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: "#00cfc8",
+      main: "#17ADA9",
+      dark: "#136e6b",
+      contrastText: "#fff",
+    },
+    secondary: {
+      light: "#e22a2e",
+      main: "#ad171a",
+      dark: "#730f11",
+      contrastText: "#fff",
+    },
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="/mentor_logotipo.svg" alt="logo" />
-        <p className="App-link">¡ Espéralo !</p>
-        <p>El Mentor - 2021</p>
-      </header>
-    </div>
+    <>
+      <ThemeProvider theme={theme}>
+        <Home />
+      </ThemeProvider>
+    </>
   );
 }
 
